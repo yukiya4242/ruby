@@ -1,12 +1,16 @@
 class Car
-  def self.run(distance)
-    puts "車で#{distance}キロ走ります"
+  def run(distance)
+    puts "車で#{distance}km走ります"
   end
 end
 
-class Taxi<Car
+class Bus<Car
+  def run(distance)
+    super
+    puts "３０人を乗せて走っています。"
+  end
 end
 
-Car.run(5)
+bus = Bus.new
+bus.run(5)
 
-puts Taxi.superclass
